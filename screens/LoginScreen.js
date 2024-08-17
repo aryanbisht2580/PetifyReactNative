@@ -31,7 +31,7 @@ const LoginScreen = ({route,navigation}) => {
         if(verify()){
             setLoading(true);
           try{
-            const {data}=await axios.post("https://identitytoolkit.googleapis.com/v1/accounts:signInWithPassword?key=AIzaSyDMQv0JaEjj6ilRReujK_CUUxWrsTk4fEA",{
+            const {data}=await axios.post("https://identitytoolkit.googleapis.com/v1/accounts:signInWithPassword?key="+process.env.EXPO_PUBLIC_FIREBASE_API_KEY,{
                 email,
                 password,
                 returnSecureToken:true

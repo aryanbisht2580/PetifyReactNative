@@ -53,7 +53,7 @@ const RegisterScreen = ({ route, navigation }) => {
   const handleSubmit=async()=>{
     if(verify()){
       try{
-        const {data}=await axios.post("https://identitytoolkit.googleapis.com/v1/accounts:signUp?key=AIzaSyDMQv0JaEjj6ilRReujK_CUUxWrsTk4fEA",{
+        const {data}=await axios.post("https://identitytoolkit.googleapis.com/v1/accounts:signUp?key="+process.env.EXPO_PUBLIC_FIREBASE_API_KEY,{
           email,
           password,
           returnSecureToken:true
